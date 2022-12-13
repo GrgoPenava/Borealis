@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Zapisi>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Zapisi</h2>
+        </div>
+        <div class="col-6" text-end">
+            <a asp-controller="Zapisi" asp-action="Create" class="btn btn-primary">Novi zapis</a>
+        </div>
+    </div>
+</div>
+<br />
+
+<table class="table" style="width:60%">
+    <thead>
+        <tr>
+@*            <th>
+                ID
+            </th>*@
+            <th>
+                Ime
+            </th>
+            <th>
+                Prezime
+            </th>
+            <th>
+                Vrijeme
+            </th>
+@*            <th>
+                Prihvaceno
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table-secondary">
+@*                <td>
+                    @item.IDzapisa
+                </td>*@
+                <td>
+                    @item.Ime
+                </td>
+                <td>
+                    @item.Prezime
+                </td>
+                <td>
+                    @item.vrijeme
+                </td>
+ @*               <td>
+                    @item.Prihvaceno
+                </td>*@
+ @*               <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a asp-controller="Zapisi" asp-action="Edit" asp-route-id="@item.IDzapisa"><span class="badge bg-primary">Edit</span></a>
+                        <a asp-controller="Zapisi" asp-action="Delete" asp-route-id="@item.IDzapisa"><span class="badge bg-danger">Delete</span></a>
+                    </div>
+                </td>*@
+            </tr>
+        }
+    </tbody>
+</table>
+
+@*@section Scripts{
+    @{
+        <partial name="_ValidationScriptPartial" />
+    }
+}*@

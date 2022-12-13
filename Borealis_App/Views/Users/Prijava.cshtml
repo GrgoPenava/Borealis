@@ -1,0 +1,23 @@
+﻿@model Users
+
+<form style="width: 50%; height: 50%; margin-left:auto; margin-right: auto;"method="post" asp-action="Prijava">
+
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Prijava administratora</h2>
+			<hr />
+		</div>
+		<div asp-validation-summary="All"></div>
+		<div class="mb-3">
+			<label asp-for="Username"></label>
+			<input asp-for="Username" class="form-control" />
+			<span asp-validation-for="Username" class="text-danger">Nije upisan username</span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="lozinka"></label>
+			<input asp-for="lozinka" class="form-control" />
+			<span asp-validation-for="lozinka" class="text-danger">Nije upisana lozinka</span>
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px;">Prijava</button>
+	</div>
+</form>

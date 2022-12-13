@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Borealis_App.props" />
+</Project>

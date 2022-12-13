@@ -1,0 +1,28 @@
+﻿@model Zapisi
+
+<form method="post" asp-action="DeletePOST">
+	<input hidden asp-for="IDzapisa" />
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Delete zapis</h2>
+			<hr />
+		</div>
+		@*<div asp-validation-summary="All"></div>*@
+		<div class="mb-3">
+			<label asp-for="Ime"></label>
+			<input asp-for="Ime" disabled class="form-control" />
+		</div>
+		<div class="mb-3">
+			<label asp-for="Prezime"></label>
+			<input asp-for="Prezime" disabled class="form-control" />
+		</div>
+		<div class="mb-3">
+			<label asp-for="vrijeme"></label>
+			<input asp-for="vrijeme" disabled class="form-control" />
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px">Delete</button>
+		<a asp-controller="Zapisi" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Cancel
+		</a>
+	</div>
+</form>
