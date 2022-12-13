@@ -48,12 +48,12 @@ namespace Borealis_App.Controllers
                         HttpContext.Session.SetString("Username", obj.Username.ToString());
                         var poruka = HttpContext.Session.GetString("Username");
                         if (poruka != null) PostojiPoruka = true;
-                        return RedirectToAction("Index");
+                        return RedirectToAction("Upravitelj","Zapisi");
                     }
                 }
                 else
                 {
-                    return RedirectToAction("Login");
+                    return RedirectToAction("Prijava");
                 }
             }
             
