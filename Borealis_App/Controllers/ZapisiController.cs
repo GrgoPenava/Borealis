@@ -58,7 +58,7 @@ namespace Borealis_App.Controllers
             {
                 _db.zapisi.Update(obj);
                 _db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Upravitelj");
             }
             return View(obj);
         }
@@ -145,7 +145,7 @@ namespace Borealis_App.Controllers
             {
                 return NotFound();
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Upravitelj");
         }
 
 
@@ -160,7 +160,7 @@ namespace Borealis_App.Controllers
             {
                 _db.zapisi.Update(ZapisiIzBaze);
                 _db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Upravitelj");
             }
             return RedirectToAction("Upravitelj");
         }

@@ -15,8 +15,10 @@ namespace Borealis_App.Controllers
         {
             _db = db;
         }
+
         public IActionResult Index()
         {
+			ViewBag.message = PostojiPoruka;
             IEnumerable<Users> UsersList = _db.users;
             UsersList = UsersList.OrderByDescending(x => x.Username);
             return View(UsersList);
@@ -25,7 +27,7 @@ namespace Borealis_App.Controllers
         //GET
         public IActionResult Prijava()
         {
-            if (HttpContext.Session.GetString("Username") == null)
+			if (HttpContext.Session.GetString("Username") == null)
             {
                 return View();
             }
@@ -36,8 +38,9 @@ namespace Borealis_App.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Prijava(Users user)
-        {
+        {    
             if (HttpContext.Session.GetString("Username") == null)
             {
                 if (ModelState.IsValid)
@@ -48,7 +51,7 @@ namespace Borealis_App.Controllers
                         HttpContext.Session.SetString("Username", obj.Username.ToString());
                         var poruka = HttpContext.Session.GetString("Username");
                         if (poruka != null) {
-                            PostojiPoruka = true; 
+                            PostojiPoruka = true;
                         } 
                         return RedirectToAction("Upravitelj","Zapisi");
                     }
@@ -58,8 +61,8 @@ namespace Borealis_App.Controllers
                     return RedirectToAction("Prijava");
                 }
             }
-            
             return View();
         }
+        
     }
 }

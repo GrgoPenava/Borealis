@@ -4,7 +4,7 @@
 	<input hidden asp-for="IDzapisa" />
 	<div class="border p-3 mt-4">
 		<div class="row pb-2">
-			<h2 class="text-primary">Delete zapis</h2>
+			<h2 class="text-primary">Brisanje zapisa</h2>
 			<hr />
 		</div>
 		@*<div asp-validation-summary="All"></div>*@
@@ -20,9 +20,9 @@
 			<label asp-for="vrijeme"></label>
 			<input asp-for="vrijeme" disabled class="form-control" />
 		</div>
-		<button type="submit" class="btn btn-primary" style="width:150px">Delete</button>
-		<a asp-controller="Zapisi" asp-action="Index" class="btn btn-secondary" style="width:150px">
-			Cancel
+		<button type="submit" class="btn btn-primary" style="width:150px">Obrisi</button>
+		<a asp-controller="Zapisi" asp-action="Upravitelj" class="btn btn-secondary" style="width:150px">
+			Odustani
 		</a>
 	</div>
 </form>
