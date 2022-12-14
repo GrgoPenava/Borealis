@@ -6,7 +6,7 @@
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-primary">Zapisi</h2>
+            <h2 class="text-primary">Upravitelj zapisa</h2>
         </div>
         <div class="col-6" text-end">
             <a asp-controller="Zapisi" asp-action="Create" class="btn btn-primary">Novi zapis</a>
@@ -19,7 +19,7 @@
     <thead>
         <tr>
             <th>
-            ID
+                ID
             </th>
             <th>
                 Ime
@@ -31,7 +31,7 @@
                 Vrijeme
             </th>
             <th>
-            Prihvaceno
+                Prihvaceno
             </th>
             <th></th>
         </tr>
@@ -41,8 +41,8 @@
         {
             <tr class="table-secondary">
                 <td>
-            @item.IDzapisa
-            </td>
+                    @item.IDzapisa
+                </td>
                 <td>
                     @item.Ime
                 </td>
@@ -52,15 +52,15 @@
                 <td>
                     @item.vrijeme
                 </td>
+                    @if(item.Prihvaceno == true){ <td>Prihvaceno je</td>}
+                    @if (item.Prihvaceno == false){<td>Nije prihvaceno</td>}
                 <td>
-            @item.Prihvaceno
-            </td>
-             <td>
-            <div class="w-75 btn-group" role="group">
-            <a asp-controller="Zapisi" asp-action="Edit" asp-route-id="@item.IDzapisa"><span class="badge bg-primary">Edit</span></a>
-            <a asp-controller="Zapisi" asp-action="Delete" asp-route-id="@item.IDzapisa"><span class="badge bg-danger">Delete</span></a>
-            </div>
-            </td>
+                    <div class="w-75 btn-group" role="group">
+                        <a asp-controller="Zapisi" asp-action="Edit" asp-route-id="@item.IDzapisa"><span class="badge bg-primary">Edit</span></a>
+                        <a asp-controller="Zapisi" asp-action="Delete" asp-route-id="@item.IDzapisa"><span class="badge bg-danger">Delete</span></a>
+                        <a asp-controller="Zapisi" asp-action="Prihvati" asp-route-id="@item.IDzapisa"><span class="badge bg-success">Prihvati</span></a>
+                    </div>
+                </td>
             </tr>
         }
     </tbody>

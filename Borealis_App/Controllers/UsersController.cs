@@ -31,7 +31,7 @@ namespace Borealis_App.Controllers
             }
             else
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Upravitelj", "Zapisi");
             }
         }
 
@@ -47,7 +47,9 @@ namespace Borealis_App.Controllers
                     {
                         HttpContext.Session.SetString("Username", obj.Username.ToString());
                         var poruka = HttpContext.Session.GetString("Username");
-                        if (poruka != null) PostojiPoruka = true;
+                        if (poruka != null) {
+                            PostojiPoruka = true; 
+                        } 
                         return RedirectToAction("Upravitelj","Zapisi");
                     }
                 }
