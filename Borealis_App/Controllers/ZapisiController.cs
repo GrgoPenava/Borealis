@@ -120,7 +120,7 @@ namespace Borealis_App.Controllers
             }
             _db.zapisi.Remove(obj);
             _db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Upravitelj");
         }
 
         //GET
